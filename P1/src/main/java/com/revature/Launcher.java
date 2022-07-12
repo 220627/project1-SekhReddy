@@ -3,12 +3,15 @@ package com.revature;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.rev.utils.ConnectionUtil;
+import com.revature.utils.ConnectionUtil;
 
-import io.Javalin.Javalin;
+import io.javalin.Javalin;
 
 public class Launcher {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		System.out.println("=========={ DEMO Expense Reimbursement System }==========");
@@ -17,7 +20,7 @@ public class Launcher {
 
 		// Try-catch block to initalize connection
 
-		try (Connect conn ConnectionUtil.getConnection()) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
 			System.out.println("Connection Successful");
 		} catch (SQLException e) {
 			System.out.println("Connection failed...");
@@ -27,7 +30,7 @@ public class Launcher {
 		// Initialize Javalin server
 
 		System.out.println("Initalizing Javalin server...");
-		Javalin app = Javalin.create(
+		final Javalin app = Javalin.create(
 
 			config -> {
 				config.defaultContentType = "application/json";
@@ -36,8 +39,6 @@ public class Launcher {
 			}
 
 		).start(3000); // Start server on port 3000
-
-
 
 	}
 	
