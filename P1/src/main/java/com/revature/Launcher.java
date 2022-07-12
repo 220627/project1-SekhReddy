@@ -1,27 +1,44 @@
 package com.revature;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.rev.utils.ConnectionUtil;
+
+import io.Javalin.Javalin;
+
 public class Launcher {
 
 	public static void main(String[] args) {
-		
-		//Welcome to P1! 
-		
-		//If you're reading this, you've successfully cloned your repo and imported the template
-		
-		//Do you coding in this project, and don't forget to save/push your progress with:
-		//git add.
-		//git commit -m"message"
-		//git push
-		
-		//yes, you WILL need to push to your repo. The clients will want to see your project repos in your portfolios.
-		
-		//here's a dog to help you on your way. Have fun!
-		
-//               __
-//          (___()'`;
-//          /,    /`
-//          \\"--\\
-		
+
+		System.out.println("=========={ DEMO Expense Reimbursement System }==========");
+		System.out.println("===========================================================");
+		System.out.println("Initializing...");
+
+		// Try-catch block to initalize connection
+
+		try (Connect conn ConnectionUtil.getConnection()) {
+			System.out.println("Connection Successful");
+		} catch (SQLException e) {
+			System.out.println("Connection failed...");
+			e.printStackTrace();
+		}
+
+		// Initialize Javalin server
+
+		System.out.println("Initalizing Javalin server...");
+		Javalin app = Javalin.create(
+
+			config -> {
+				config.defaultContentType = "application/json";
+				config.showJavalinBanner = false;
+				config.enableCorsForAllOrigins();
+			}
+
+		).start(3000); // Start server on port 3000
+
+
+
 	}
 	
 }

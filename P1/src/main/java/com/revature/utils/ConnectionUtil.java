@@ -27,7 +27,7 @@ public class ConnectionUtil {
 		//I'm going to put the credentials in Strings, and use those strings in a method that gets connections
 		String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=<SCHEMA NAME HERE>";
 		String username = "postgres";
-		String password = "<PASSWORD HERE>";
+		String password = "password";
 		
 		//This return statement is what returns out actual database Connection object
 		//Note how this getConnection() method has a return type of Connection
