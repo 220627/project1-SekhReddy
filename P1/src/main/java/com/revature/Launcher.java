@@ -9,9 +9,6 @@ import io.javalin.Javalin;
 
 public class Launcher {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		System.out.println("=========={ DEMO Expense Reimbursement System }==========");
@@ -39,6 +36,8 @@ public class Launcher {
 			}
 
 		).start(3000); // Start server on port 3000
+
+		
 
 	}
 	
