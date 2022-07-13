@@ -3,6 +3,7 @@ package com.revature;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import com.revature.controllers.AuthController;
 import com.revature.utils.ConnectionUtil;
 
 import io.javalin.Javalin;
@@ -38,6 +39,14 @@ public class Launcher {
 		).start(3000); // Start server on port 3000
 
 		
+		// Instantiate controllers
+
+		System.out.println("Instantiating controllers...");
+
+		AuthController ac = new AuthController();
+		ReimbController rc = new ReimbController();
+		
+
 
 	}
 	
