@@ -13,7 +13,7 @@ public class Reimbursement {
     private String reimbDescription;
     private int reimbAuthor;
     private int reimbStatusId;
-    private int reimbTypeId;
+    private String reimbType;
 
     // Constructors
 
@@ -23,7 +23,7 @@ public class Reimbursement {
     }
 
     // Constructor with all variables
-    public Reimbursement(int reimbId, BigDecimal money, String reimbSubmitted, String reimbResolved, String reimbDescription, int reimbAuthor, int reimbStatusId, int reimbTypeId) {
+    public Reimbursement(int reimbId, BigDecimal money, String reimbSubmitted, String reimbResolved, String reimbDescription, int reimbAuthor, int reimbStatusId, String reimbType) {
         super();
         this.reimbId = reimbId;
         this.money = money;
@@ -32,11 +32,11 @@ public class Reimbursement {
         this.reimbDescription = reimbDescription;
         this.reimbAuthor = reimbAuthor;
         this.reimbStatusId = reimbStatusId;
-        this.reimbTypeId = reimbTypeId;
+        this.reimbType = reimbType;
     }
 
     // Constructor without ID
-    public Reimbursement(BigDecimal money, String reimbSubmitted, String reimbResolved, String reimbDescription, int reimbAuthor, int reimbStatusId, int reimbTypeId) {
+    public Reimbursement(BigDecimal money, String reimbSubmitted, String reimbResolved, String reimbDescription, int reimbAuthor, int reimbStatusId, String reimbType) {
         super();
         this.money = money;
         this.reimbSubmitted = reimbSubmitted;
@@ -44,14 +44,14 @@ public class Reimbursement {
         this.reimbDescription = reimbDescription;
         this.reimbAuthor = reimbAuthor;
         this.reimbStatusId = reimbStatusId;
-        this.reimbTypeId = reimbTypeId;
+        this.reimbType = reimbType;
     }
 
     // toString
 
     @Override
     public String toString() {
-        return "Reimbursement [reimbId=" + reimbId + ", money=" + money + ", reimbSubmitted=" + reimbSubmitted + ", reimbResolved=" + reimbResolved + ", reimbDescription=" + reimbDescription + ", reimbAuthor=" + reimbAuthor + ", reimbStatusId=" + reimbStatusId + ", reimbTypeId=" + reimbTypeId + "]";
+        return "Reimbursement [reimbId=" + reimbId + ", money=" + money + ", reimbSubmitted=" + reimbSubmitted + ", reimbResolved=" + reimbResolved + ", reimbDescription=" + reimbDescription + ", reimbAuthor=" + reimbAuthor + ", reimbStatusId=" + reimbStatusId + ", reimbType=" + reimbType + "]";
     }
 
     // Getters and Setters
@@ -112,12 +112,12 @@ public class Reimbursement {
         this.reimbStatusId = reimbStatusId;
     }
 
-    public int getReimbTypeId() {
-        return reimbTypeId;
+    public String getReimbType() {
+        return reimbType;
     }
 
-    public void setReimbTypeId(int reimbTypeId) {
-        this.reimbTypeId = reimbTypeId;
+    public void setReimbType(String reimbType) {
+        this.reimbType = reimbType;
     }
 
 }

@@ -9,6 +9,7 @@ public class LoginDTO {
         super();
         this.username = username;
         this.password = password;
+    
     }
 
     // Getters and Setters
@@ -17,7 +18,7 @@ public class LoginDTO {
         return username;
     }
 
-    public void setUsername() {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -25,7 +26,7 @@ public class LoginDTO {
         return password;
     }
 
-    public void setPassword() {
+    public void setPassword(String password) {
         this.password = password;
     }
 }
