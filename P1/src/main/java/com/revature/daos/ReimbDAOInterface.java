@@ -12,4 +12,6 @@ public interface ReimbDAOInterface {
 
     public void deleteReimbursement(int id);
 
+    public void updateReimbursement(int id);
+
 }

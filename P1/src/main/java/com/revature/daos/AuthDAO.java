@@ -12,7 +12,7 @@ public class AuthDAO implements AuthDAOInterface {
     @Override
     public boolean login(String username, String password) {
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "SELECT * FROM ERS_USER WHERE ers_username = ? AND ers_password = ?";
+            String sql = "SELECT * FROM ERS_USERS WHERE ers_username = ? AND ers_password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username);
             ps.setString(2, password);

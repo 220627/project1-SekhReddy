@@ -17,7 +17,8 @@ public class AuthController {
 
         String json = ctx.body();
         Gson gson = new Gson();
-        LoginDTO ld = gson.fromJson(json, LoginDTO.class);
+        LoginDTO ld = gson.fromJson(json,LoginDTO.class);
+        System.out.println(ld.toString());
         String username = ld.getUsername();
         String password = ld.getPassword();
         String token = as.login(username, password);

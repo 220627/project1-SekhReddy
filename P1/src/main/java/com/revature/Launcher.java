@@ -59,7 +59,9 @@ public class Launcher {
 		
 		app.post("/employees/reimbursements", rc.insertReimbHandler);
 
-		app.delete("/employees/reimbursements/delete", rc.deleteReimbHandler);
+		app.delete("/employees/reimbursements/delete/:id", rc.deleteReimbHandler);
+
+		app.put("/employees/reimbursements/update/:id", rc.updateReimbHandler);
 
 
 	}

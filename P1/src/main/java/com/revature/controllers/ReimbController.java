@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
+
 import com.google.gson.Gson;
 import com.revature.daos.ReimbDAO;
 import com.revature.models.Reimbursement;
@@ -13,7 +15,10 @@ public class ReimbController {
     public Handler getAllReimbsHandler = (ctx) -> {
 
         if (AuthController.session != null) {
-            ctx.json(rDAO.getAllReimbursements());
+            Gson gson = new Gson();
+            ArrayList<Reimbursement> reimbs = rDAO.getAllReimbursements();
+            String output = gson.toJson(reimbs);
+            ctx.result(output);
         } else {
             ctx.status(401);
         }
@@ -39,6 +44,18 @@ public class ReimbController {
         if (AuthController.session != null) {
             int id = Integer.parseInt(ctx.pathParam("id"));
             rDAO.deleteReimbursement(id);
+            ctx.status(200);
+        } else {
+            ctx.status(401);
+        }
+
+    };
+
+    public Handler updateReimbHandler = (ctx) -> {
+
+        if (AuthController.session != null) {
+            int id = Integer.parseInt(ctx.pathParam("id"));
+            rDAO.updateReimbursement(id);
             ctx.status(200);
         } else {
             ctx.status(401);

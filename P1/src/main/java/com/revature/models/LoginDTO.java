@@ -29,4 +29,9 @@ public class LoginDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String toString() {
+        return "LoginDTO [username=" + username + ", password=" + password + "]";
+    }
+
 }
